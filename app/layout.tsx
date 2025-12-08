@@ -19,10 +19,67 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "Brillance - Effortless Custom Contract Billing",
-  description:
-    "Streamline your billing process with seamless automation for every custom contract, tailored by Brillance.",
-    generator: 'v0.app'
+  metadataBase: new URL("https://solhun.dev"),
+  title: {
+    default: "CLI Manager - Manage Claude Code, Codex CLI & Gemini CLI in One Place",
+    template: "%s | CLI Manager"
+  },
+  description: "The ultimate CLI agent management tool. Organize Claude Code, Codex CLI, and Gemini CLI from a single dashboard. Rename agents, switch editors instantly, and streamline your AI-powered development workflow.",
+  keywords: [
+    "CLI Manager",
+    "Claude Code",
+    "Codex CLI",
+    "Gemini CLI",
+    "AI coding assistant",
+    "CLI agent management",
+    "developer tools",
+    "terminal manager",
+    "VS Code",
+    "Cursor IDE",
+    "AI development workflow",
+    "command line interface",
+    "multi-agent management"
+  ],
+  authors: [{ name: "CLI Manager Team" }],
+  creator: "CLI Manager",
+  publisher: "CLI Manager",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "CLI Manager",
+    title: "CLI Manager - All Your CLI Agents in One Place",
+    description: "Manage Claude Code, Codex CLI, and Gemini CLI from a single dashboard. Rename agents, organize projects, and switch editors instantly.",
+    images: [
+      {
+        url: "/cli-main.png",
+        width: 1200,
+        height: 630,
+        alt: "CLI Manager Dashboard - Manage all CLI agents in one place",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CLI Manager - All Your CLI Agents in One Place",
+    description: "Manage Claude Code, Codex CLI, and Gemini CLI from a single dashboard. The ultimate tool for AI-powered development.",
+    images: ["/cli-main.png"],
+    creator: "@climanager",
+  },
+  alternates: {
+    canonical: "/",
+  },
+  category: "Developer Tools",
 }
 
 export default function RootLayout({
