@@ -1,10 +1,47 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 
 export default function PricingSection() {
-  
+  // 로딩 상태 관리
+  const [isLoading, setIsLoading] = useState(false)
+
+  /**
+   * 체크아웃 버튼 클릭 핸들러
+   *
+   * API를 호출해서 Lemon Squeezy 체크아웃 URL을 받아온 후
+   * 해당 URL로 사용자를 리다이렉트합니다.
+   */
+  const handleCheckout = async () => {
+    try {
+      setIsLoading(true)
+
+      // 체크아웃 URL 요청
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // 필요 시 사용자 정보 pre-fill 가능
+        // body: JSON.stringify({ email: "user@example.com", name: "User" }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "체크아웃 생성에 실패했습니다.")
+      }
+
+      // Lemon Squeezy 체크아웃 페이지로 이동
+      window.location.href = data.url
+    } catch (error) {
+      console.error("Checkout error:", error)
+      alert(error instanceof Error ? error.message : "결제 페이지로 이동 중 오류가 발생했습니다.")
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <div className="w-full flex flex-col justify-center items-center gap-2">
       {/* Header Section */}
@@ -81,12 +118,16 @@ export default function PricingSection() {
                 </div>
 
                 {/* CTA Button */}
-                <div className="self-stretch px-3 sm:px-4 py-2 sm:py-[10px] relative bg-[#FBFAF9] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors">
+                <button
+                  onClick={handleCheckout}
+                  disabled={isLoading}
+                  className="self-stretch px-3 sm:px-4 py-2 sm:py-[10px] relative bg-[#FBFAF9] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
                   <div className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
                   <div className="flex justify-center flex-col text-[#37322F] text-[11px] sm:text-[13px] font-medium leading-4 sm:leading-5 font-sans">
-                    Get Access
+                    {isLoading ? "Loading..." : "Get Access"}
                   </div>
-                </div>
+                </button>
               </div>
 
               <div className="self-stretch flex flex-col justify-start items-start gap-1.5 sm:gap-2">
