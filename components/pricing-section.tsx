@@ -108,10 +108,14 @@ export default function PricingSection() {
 
                 <div className="self-stretch flex flex-col justify-start items-start gap-1 sm:gap-2">
                   <div className="flex flex-col justify-start items-start gap-0.5 sm:gap-1">
-                    <div className="relative h-[36px] sm:h-[60px] flex items-center text-[#F0EFEE] text-2xl sm:text-5xl font-medium leading-[36px] sm:leading-[60px] font-serif">
+                    <div className="px-2 py-0.5 rounded-full bg-[#FF8000]/10 text-[#FF8000] text-[10px] sm:text-xs font-medium border border-[#FF8000]/20 mb-1 self-start">
+                      Early Access Special
+                    </div>
+                    <div className="relative h-[36px] sm:h-[60px] flex items-center gap-2 sm:gap-3 text-[#F0EFEE] text-2xl sm:text-5xl font-medium leading-[36px] sm:leading-[60px] font-serif">
+                      <span className="text-[#D2C6BF]/60 text-lg sm:text-3xl line-through decoration-[#D2C6BF]/60 decoration-1">$49</span>
                       <span>$29</span>
                     </div>
-                    <div className="text-[#D2C6BF] text-[10px] sm:text-sm font-medium font-sans">
+                    <div className="text-[#D2C6BF] text-[10px] sm:text-sm font-medium font-sans start-0">
                       one-time payment
                     </div>
                   </div>

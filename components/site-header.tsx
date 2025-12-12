@@ -17,7 +17,10 @@ export function SiteHeader() {
 
           {/* 로고 - 모바일에서 가운데, 데스크탑에서 왼쪽 */}
           <div className="flex justify-center items-center sm:flex-1 sm:justify-start">
-            <Link href="/" className="flex justify-start items-center cursor-pointer">
+            <Link href="/" className="flex justify-start items-center gap-2 cursor-pointer">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 relative rounded-md overflow-hidden shadow-sm border border-[rgba(55,50,47,0.08)]">
+                <img src="/solhun-logo.png" alt="Solhun Logo" className="object-cover w-full h-full" />
+              </div>
               <div className="flex flex-col justify-center text-[#2F3037] text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-5 font-sans">
                 solhun
               </div>
