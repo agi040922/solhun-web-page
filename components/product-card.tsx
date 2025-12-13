@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { Play } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface ProductCardProps {
@@ -11,6 +12,7 @@ interface ProductCardProps {
   logo?: React.ReactNode
   onClick?: () => void
   className?: string
+  hasVideo?: boolean // 비디오 포함 여부
 }
 
 export function ProductCard({
@@ -21,6 +23,7 @@ export function ProductCard({
   logo,
   className,
   onClick,
+  hasVideo = false,
 }: ProductCardProps) {
   return (
     <div
@@ -42,6 +45,14 @@ export function ProductCard({
         {badge && (
           <div className="absolute left-2 top-2 sm:left-4 sm:top-4 rounded-full bg-white/90 px-2 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-medium text-gray-700 backdrop-blur-sm">
             {badge}
+          </div>
+        )}
+        {/* 비디오 재생 버튼 */}
+        {hasVideo && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="rounded-full bg-white/90 p-2 sm:p-3 shadow-lg transition-transform group-hover:scale-110">
+              <Play className="h-4 w-4 sm:h-6 sm:w-6 text-gray-800 ml-0.5" />
+            </div>
           </div>
         )}
       </div>

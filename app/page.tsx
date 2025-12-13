@@ -4,6 +4,7 @@
 import { ContainerScroll } from "../components/ui/container-scroll-animation"
 import CTASection from "../components/cta-section"
 import { PageWrapper } from "../components/page-wrapper"
+import { ScrollVideo } from "../components/scroll-video"
 import Link from "next/link"
 import Script from "next/script"
 
@@ -13,8 +14,8 @@ const jsonLd = {
   "@type": "SoftwareApplication",
   name: "CLI Manager",
   applicationCategory: "DeveloperApplication",
-  operatingSystem: "macOS, Windows, Linux",
-  description: "The ultimate CLI agent management tool. Organize Claude Code, Codex CLI, and Gemini CLI from a single dashboard.",
+  operatingSystem: "macOS",
+  description: "The ultimate macOS desktop CLI agent management tool. Organize Claude Code, Codex CLI, and Gemini CLI from a single dashboard.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -60,6 +61,14 @@ export default function LandingPage() {
       <div className="pt-0 sm:pt-0 md:pt-0 lg:pt-[96px] pb-8 sm:pb-12 md:pb-16 flex flex-col justify-start items-center px-2 sm:px-4 md:px-8 lg:px-0 w-full sm:pl-0 sm:pr-0 pl-0 pr-0">
         <div className="w-full max-w-[937px] lg:w-[937px] flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
           <div className="self-stretch rounded-[3px] flex flex-col justify-center items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+            <Badge 
+              icon={
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.0573 9.47167C11.0667 8.01948 12.2882 7.14917 12.3551 7.10854C11.6669 6.10323 10.5973 5.9526 10.2223 5.93885C9.30949 5.8451 8.42386 6.47417 7.95761 6.47417C7.49136 6.47417 6.78605 5.95292 6.03355 5.96823C5.06699 5.98323 4.15542 6.52917 3.66605 7.37948C2.66261 9.12135 3.40792 11.7101 4.38261 13.1367C4.85699 13.8295 5.43167 14.5932 6.1823 14.5685C6.90386 14.5445 7.1798 14.1035 8.05199 14.1035C8.9223 14.1035 9.17605 14.5685 9.92761 14.5445C10.7029 14.52 11.2335 13.8545 11.701 13.1617C12.2348 12.381 12.457 11.621 12.4795 11.6095C12.4589 11.5995 11.036 11.056 11.0573 9.47167ZM8.83417 4.16292C9.25605 3.6523 9.54011 2.94167 9.46261 2.2351C8.76667 2.26417 7.92542 2.69885 7.42636 3.28448C6.9748 3.80573 6.66605 4.53854 6.7573 5.2323C7.51949 5.29135 8.35855 4.84667 8.83417 4.16292Z" fill="#37322F"/>
+                </svg>
+              }
+              text="macOS Desktop App"
+            />
             <div className="w-full max-w-[748.71px] lg:w-[748.71px] text-center flex justify-center flex-col text-[#37322F] text-[24px] xs:text-[28px] sm:text-[36px] md:text-[52px] lg:text-[80px] font-normal leading-[1.1] sm:leading-[1.15] md:leading-[1.2] lg:leading-24 font-serif px-2 sm:px-4 md:px-0 relative">
               Your CLI Agents,
               <br />
@@ -73,7 +82,7 @@ export default function LandingPage() {
             <div className="w-full max-w-[506.08px] lg:w-[506.08px] text-center flex justify-center flex-col text-[rgba(55,50,47,0.80)] sm:text-lg md:text-xl leading-[1.4] sm:leading-[1.45] md:leading-[1.5] lg:leading-7 font-sans px-2 sm:px-4 md:px-0 lg:text-lg font-medium text-sm">
               Claude Code, Codex CLI, Gemini CLI — manage them all.
               <br className="hidden sm:block" />
-              Organize projects, switch editors, and stay in control.
+              Organize projects, switch editors, and stay in control of your desktop agents.
             </div>
           </div>
         </div>
@@ -112,13 +121,10 @@ export default function LandingPage() {
               </>
             }
           >
-            <img
-              src="/cli-main.png"
+            <ScrollVideo
+              src="/videos/various-project-main.mp4"
               alt="CLI Manager - Manage all your CLI agents in one place"
-              height={720}
-              width={1400}
               className="mx-auto rounded-2xl object-cover h-auto w-full md:h-full object-left-top"
-              draggable={false}
             />
           </ContainerScroll>
         </div>
@@ -175,8 +181,8 @@ export default function LandingPage() {
               </div>
               <div className="w-full md:w-[60%] relative">
                 <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#F5F5F4] rounded-2xl overflow-hidden shadow-2xl border border-[rgba(55,50,47,0.08)] flex items-center justify-center relative group transform md:translate-x-12 transition-transform duration-700 hover:scale-[1.02]">
-                  <img
-                    src="/cli-main-gemini.png"
+                  <ScrollVideo
+                    src="/videos/various-project-main.mp4"
                     alt="CLI Manager Dashboard - Manage Claude Code, Codex CLI, Gemini CLI"
                     className="w-full h-full object-cover"
                   />
@@ -196,8 +202,8 @@ export default function LandingPage() {
               </div>
               <div className="w-full md:w-[60%] relative">
                 <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-[#F5F5F4] rounded-2xl overflow-hidden shadow-xl border border-[rgba(55,50,47,0.08)] flex items-center justify-center relative group transform md:-translate-x-8 transition-transform duration-700 hover:scale-[1.02]">
-                  <img
-                    src="/cli-rename.png"
+                  <ScrollVideo
+                    src="/videos/changename-main.mp4"
                     alt="CLI Agent Renaming - Define roles for each agent"
                     className="w-full h-full object-cover"
                   />
@@ -217,8 +223,8 @@ export default function LandingPage() {
               </div>
               <div className="w-full md:w-[60%] relative">
                 <div className="w-full aspect-[4/3] md:aspect-[5/4] bg-[#F5F5F4] rounded-2xl overflow-hidden shadow-xl border border-[rgba(55,50,47,0.08)] flex items-center justify-center relative group transform md:translate-y-4 transition-transform duration-700 hover:scale-[1.02]">
-                  <img
-                    src="/cli-editor-setting.png"
+                  <ScrollVideo
+                    src="/videos/open-editor-main.mp4"
                     alt="Editor Settings - Switch between Cursor, VS Code, and more"
                     className="w-full h-full object-cover"
                   />

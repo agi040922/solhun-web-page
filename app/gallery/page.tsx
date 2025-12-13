@@ -15,6 +15,7 @@ const products = [
     logo: <GitBranch className="h-5 w-5 text-purple-600" />,
     badge: "Popular",
     galleryImages: [
+      "/videos/makeworktree.mp4", // 비디오가 첫 번째
       "/worktree-1.png",
       "/worktree-2.png",
       "/worktree-3.png",
@@ -31,6 +32,7 @@ const products = [
     logo: <Github className="h-5 w-5 text-gray-800" />,
     badge: "Essential",
     galleryImages: [
+      "/videos/commit-push.mp4", // 비디오가 첫 번째
       "/git-integration-1.png",
       "/git-restore.png",
     ]
@@ -42,6 +44,8 @@ const products = [
     image: "/port-monitor.png",
     logo: <Network className="h-5 w-5 text-blue-500" />,
     galleryImages: [
+      "/videos/port-manager.mp4", // 비디오가 첫 번째
+      "/videos/port-kill.mp4",
       "/port-1.png",
       "/port-2.png",
       "/port-monitor.png",
@@ -54,6 +58,7 @@ const products = [
     image: "/terminal-templates.png",
     logo: <Terminal className="h-5 w-5 text-green-600" />,
     galleryImages: [
+      "/videos/templates.mp4", // 비디오가 첫 번째
       "/template-1.png",
       "/template-2.png",
       "/template-3.png",
@@ -67,6 +72,7 @@ const products = [
     image: "/playground.png",
     logo: <FlaskConical className="h-5 w-5 text-orange-500" />,
     galleryImages: [
+      "/videos/playground.mp4", // 비디오가 첫 번째
       "/playground.png",
       "/main-claude.png",
       "/main-gemini.png",

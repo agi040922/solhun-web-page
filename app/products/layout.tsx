@@ -64,9 +64,9 @@ const jsonLd = {
   "@type": "SoftwareApplication",
   name: "CLI Manager",
   applicationCategory: "DeveloperApplication",
-  operatingSystem: "macOS, Windows, Linux",
+  operatingSystem: "macOS",
   description:
-    "CLI Manager helps developers orchestrate AI agents with powerful tools for worktree management, Git integration, port tracking, and terminal automation.",
+    "CLI Manager helps developers orchestrate AI agents with powerful tools for worktree management, Git integration, port tracking, and terminal automation. Built for macOS.",
   featureList: [
     "Worktree Manager - Parallel AI agent workflows with Git worktrees",
     "Git Integration - Visual Git history and easy rollback",
