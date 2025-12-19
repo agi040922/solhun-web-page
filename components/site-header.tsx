@@ -49,6 +49,11 @@ export function SiteHeader() {
                   Docs
                 </div>
               </Link>
+              <Link href="/changelog" className="flex justify-start items-center cursor-pointer px-3 py-2 rounded-full hover:bg-[rgba(55,50,47,0.05)] transition-all duration-200">
+                <div className="flex flex-col justify-center text-[rgba(49,45,43,0.80)] text-xs md:text-[13px] font-medium leading-[14px] font-sans hover:text-[#2F3037] transition-colors">
+                  Changelog
+                </div>
+              </Link>
             </div>
           </div>
 
@@ -154,6 +159,13 @@ export function SiteHeader() {
             className="px-4 py-3 rounded-xl text-[rgba(49,45,43,0.80)] text-sm font-medium hover:bg-[rgba(55,50,47,0.05)] hover:text-[#2F3037] transition-all duration-200"
           >
             Docs
+          </Link>
+          <Link
+            href="/changelog"
+            onClick={() => setIsMenuOpen(false)}
+            className="px-4 py-3 rounded-xl text-[rgba(49,45,43,0.80)] text-sm font-medium hover:bg-[rgba(55,50,47,0.05)] hover:text-[#2F3037] transition-all duration-200"
+          >
+            Changelog
           </Link>
           <div className="h-[1px] bg-[rgba(55,50,47,0.12)] my-1"></div>
           <p className="px-4 text-xs font-semibold text-[rgba(49,45,43,0.50)] uppercase tracking-wider mb-1">Download</p>
