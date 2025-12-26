@@ -2,12 +2,12 @@
 
 import { useState } from "react"
 
-interface FAQItem {
+export interface FAQItem {
   question: string
   answer: string
 }
 
-const faqData: FAQItem[] = [
+export const faqData: FAQItem[] = [
   {
     question: "What is Solhun?",
     answer:

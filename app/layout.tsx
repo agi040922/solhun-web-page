@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     default: "CLI Manager - Manage Claude Code, Codex CLI & Gemini CLI in One Place",
     template: "%s | CLI Manager"
   },
-  description: "The ultimate CLI agent management tool. Organize Claude Code, Codex CLI, and Gemini CLI from a single dashboard. Rename agents, switch editors instantly, and streamline your AI-powered development workflow.",
+  description: "Manage Claude Code, Codex CLI, and Gemini CLI from one dashboard. Organize projects, rename agents, and switch editors instantly with CLI Manager.",
   keywords: [
     "CLI Manager",
     "Claude Code",

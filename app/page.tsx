@@ -8,7 +8,7 @@ import { ScrollVideo } from "../components/scroll-video"
 import Link from "next/link"
 import Script from "next/script"
 import { ProductHuntSticker } from "../components/product-hunt-sticker"
-import FAQSection from "../components/faq-section"
+import FAQSection, { faqData } from "../components/faq-section"
 import TestimonialsSection from "../components/testimonials-section"
 
 // JSON-LD structured data for SEO
@@ -38,6 +38,20 @@ const jsonLd = {
   },
 }
 
+// FAQPage JSON-LD structured data for AI optimization
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqData.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+}
+
 // Reusable Badge Component
 function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
@@ -60,6 +74,13 @@ export default function LandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+      {/* FAQPage JSON-LD for AI/LLM Discovery */}
+      <Script
+        id="faq-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {/* Hero Section */}
       <div className="pt-0 sm:pt-0 md:pt-0 lg:pt-[96px] pb-8 sm:pb-12 md:pb-16 flex flex-col justify-start items-center px-2 sm:px-4 md:px-8 lg:px-0 w-full sm:pl-0 sm:pr-0 pl-0 pr-0">
         <div className="w-full max-w-[937px] lg:w-[937px] flex flex-col justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
@@ -72,7 +93,7 @@ export default function LandingPage() {
               }
               text="macOS Desktop App"
             />
-            <div className="w-full max-w-[748.71px] lg:w-[748.71px] text-center flex justify-center flex-col text-[#37322F] text-[24px] xs:text-[28px] sm:text-[36px] md:text-[52px] lg:text-[80px] font-normal leading-[1.1] sm:leading-[1.15] md:leading-[1.2] lg:leading-24 font-serif px-2 sm:px-4 md:px-0 relative">
+            <h1 className="w-full max-w-[748.71px] lg:w-[748.71px] text-center flex justify-center flex-col text-[#37322F] text-[24px] xs:text-[28px] sm:text-[36px] md:text-[52px] lg:text-[80px] font-normal leading-[1.1] sm:leading-[1.15] md:leading-[1.2] lg:leading-24 font-serif px-2 sm:px-4 md:px-0 relative">
               Your CLI Agents,
               <br />
               All in One Place
@@ -81,7 +102,7 @@ export default function LandingPage() {
               <div className="absolute -right-10 -top-8 scale-[0.55] sm:scale-75 sm:-right-8 sm:-top-4 md:-right-16 md:top-4 md:scale-100 lg:-right-28 lg:top-8 z-50">
                 <ProductHuntSticker />
               </div>
-            </div>
+            </h1>
 
             <div className="w-full max-w-[506.08px] lg:w-[506.08px] text-center flex justify-center flex-col text-[rgba(55,50,47,0.80)] sm:text-lg md:text-xl leading-[1.4] sm:leading-[1.45] md:leading-[1.5] lg:leading-7 font-sans px-2 sm:px-4 md:px-0 lg:text-lg font-medium text-sm">
               Claude Code, Codex CLI, Gemini CLI — manage them all.
@@ -109,7 +130,7 @@ export default function LandingPage() {
         <div className="absolute top-[232px] sm:top-[248px] md:top-[264px] lg:top-[320px] left-1/2 transform -translate-x-1/2 z-0 pointer-events-none">
           <img
             src="/mask-group-pattern.svg"
-            alt=""
+            alt="Background pattern decoration"
             className="w-[936px] sm:w-[1404px] md:w-[2106px] lg:w-[2808px] h-auto opacity-30 sm:opacity-40 md:opacity-50 mix-blend-multiply"
             style={{
               filter: "hue-rotate(15deg) saturate(0.7) brightness(1.2)",
@@ -156,9 +177,9 @@ export default function LandingPage() {
                 }
                 text="Key Features"
               />
-              <div className="w-full max-w-[472.55px] text-center flex justify-center flex-col text-[#49423D] text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
+              <h2 className="w-full max-w-[472.55px] text-center flex justify-center flex-col text-[#49423D] text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
                 Built for developers who juggle multiple AI agents
-              </div>
+              </h2>
               <div className="self-stretch text-center text-[#605A57] text-sm sm:text-base font-normal leading-6 sm:leading-7 font-sans">
                 Stop switching between terminals and losing context.
                 <br className="hidden sm:block" />
@@ -182,6 +203,9 @@ export default function LandingPage() {
                   <br className="hidden md:block" />
                   Activate agents, categorize with nicknames, and organize all your projects effortlessly.
                 </div>
+                <Link href="/docs" className="text-[#37322F] hover:text-[#605A57] transition-colors text-sm font-medium mt-2 underline">
+                  Learn more →
+                </Link>
               </div>
               <div className="w-full md:w-[60%] relative">
                 <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#F5F5F4] rounded-2xl overflow-hidden shadow-2xl border border-[rgba(55,50,47,0.08)] flex items-center justify-center relative group transform md:translate-x-12 transition-transform duration-700 hover:scale-[1.02]">
@@ -203,6 +227,9 @@ export default function LandingPage() {
                 <div className="text-[#605A57] text-base sm:text-lg font-normal leading-7 font-sans">
                   Rename each CLI agent to reflect its purpose. Assign roles like &quot;Frontend Dev&quot;, &quot;Backend API&quot;, or &quot;Design Review&quot; — making multi-agent workflows intuitive and organized.
                 </div>
+                <Link href="/gallery" className="text-[#37322F] hover:text-[#605A57] transition-colors text-sm font-medium mt-2 underline">
+                  See examples →
+                </Link>
               </div>
               <div className="w-full md:w-[60%] relative">
                 <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-[#F5F5F4] rounded-2xl overflow-hidden shadow-xl border border-[rgba(55,50,47,0.08)] flex items-center justify-center relative group transform md:-translate-x-8 transition-transform duration-700 hover:scale-[1.02]">
@@ -224,6 +251,9 @@ export default function LandingPage() {
                 <div className="text-[#605A57] text-base sm:text-lg font-normal leading-7 font-sans">
                   Jump between Cursor, VS Code, or any editor with a single click. Configure your preferred editor and switch projects seamlessly — no more context switching friction.
                 </div>
+                <Link href="/changelog" className="text-[#37322F] hover:text-[#605A57] transition-colors text-sm font-medium mt-2 underline">
+                  See what's new →
+                </Link>
               </div>
               <div className="w-full md:w-[60%] relative">
                 <div className="w-full aspect-[4/3] md:aspect-[5/4] bg-[#F5F5F4] rounded-2xl overflow-hidden shadow-xl border border-[rgba(55,50,47,0.08)] flex items-center justify-center relative group transform md:translate-y-4 transition-transform duration-700 hover:scale-[1.02]">
@@ -243,7 +273,9 @@ export default function LandingPage() {
         <TestimonialsSection />
 
         {/* FAQ Section */}
-        <FAQSection />
+        <div id="faq">
+          <FAQSection />
+        </div>
 
         {/* CTA Section */}
         <CTASection />
