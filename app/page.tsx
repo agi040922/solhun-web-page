@@ -10,7 +10,7 @@ import Script from "next/script"
 import { ProductHuntSticker } from "../components/product-hunt-sticker"
 import FAQSection, { faqData } from "../components/faq-section"
 import TestimonialsSection from "../components/testimonials-section"
-import PricingSection from "../components/pricing-section"
+// import PricingSection from "../components/pricing-section"  // 메인 페이지에서 임시 숨김
 
 // JSON-LD structured data for SEO
 const jsonLd = {
@@ -281,10 +281,11 @@ export default function LandingPage() {
         {/* CTA Section */}
         <CTASection />
 
-        {/* Pricing Section */}
+        {/* Pricing Section - 메인 페이지에서 임시 숨김
         <div id="pricing" className="w-full mt-16 md:mt-24">
           <PricingSection />
         </div>
+        */}
       </div>
     </PageWrapper>
   )
