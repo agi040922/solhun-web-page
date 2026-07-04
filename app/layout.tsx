@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Instrument_Serif } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { GoogleAnalytics } from "@/components/google-analytics"
 import "./globals.css"
 
 const inter = Inter({
@@ -20,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://solhun.com"),
+  metadataBase: new URL("https://www.solhun.com"),
   icons: {
     icon: "/solhun-logo.png",
     apple: "/solhun-logo.png",
@@ -106,6 +107,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   )

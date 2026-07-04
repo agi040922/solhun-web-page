@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/private/", "/admin/", "/test/"],
       },
     ],
-    sitemap: "https://solhun.com/sitemap.xml",
+    sitemap: "https://www.solhun.com/sitemap.xml",
   }
 }
