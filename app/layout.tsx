@@ -85,6 +85,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    // 네이버 서치어드바이저 사이트 소유확인 (searchadvisor.naver.com)
+    other: {
+      "naver-site-verification": "616f2d14a4c261aba359dc9276a97a3f8b1f4868",
+    },
+  },
   category: "Developer Tools",
 }
 
